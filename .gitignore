@@ -1,0 +1,4 @@
+secrets.py
+*.log
+*.csv
+/__pycache__

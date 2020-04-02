@@ -1,0 +1,46 @@
+<div class="container signup">
+
+
+
+    {% if answer["mode"] == "add_success" %}
+
+    <div class="alert alert-success" role="alert">
+        Deine E-mail "{{ answer["email"] }}" wurde erfolgreich zum Verteiler "{{ answer["stud"] }}" hinzugefügt.
+    </div>
+
+    {% endif %}
+
+    {% if answer["mode"] == "already_exists" %}
+
+    <div class="alert alert-danger" role="alert">
+        Für deine E-mail "{{ answer["email"] }}" exestiert bereits ein Verteiler für den Studiengang
+        "{{ answer["stud"] }}".
+        Möchtest du diesen entfernen? <a href="/remove">Ja!</a>
+
+    </div>
+
+    {% endif %}
+
+
+
+    <form method="POST" action="/">
+        <dl>
+            {{ wtf.quick_form(form)}}
+
+            <div class="panel panel-default">
+                <div class="panel-body panel-less">
+
+                    <p class="help-block text-center">Mit der Regestrierung bestätige ich, dass ich Student an der
+                        FK03 der Hochschule München bin.
+                    </p>
+                </div>
+            </div>
+
+
+            <input class="btn btn-primary btn-lg btn-block mybtn" type="submit" value="Registrieren">
+        </dl>
+    </form>
+
+
+
+</div>

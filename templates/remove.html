@@ -1,0 +1,44 @@
+
+<div class="container signup">
+
+
+
+    {% if answer["mode"] == "remove_success" %}
+
+    <div class="alert alert-success" role="alert">
+        {{ answer["remove_counter"] }} Verteiler für die E-Mail "{{ answer["email"] }}" wurden gelöscht.
+    </div>
+
+    {% endif %}
+
+    {% if answer["mode"] == "not_found" %}
+
+    <div class="alert alert-danger" role="alert">
+        Für deine E-mail "{{ answer["email"] }}" wurde kein Verteiler gefunden. Möchtest du einen <a href="/">hinzufügen</a>?
+
+    </div>
+
+    {% endif %}
+
+
+
+    <form method="POST" action="/remove">
+        <dl>
+            {{ wtf.quick_form(form)}}
+
+            <div class="panel panel-default">
+                <div class="panel-body panel-less">
+
+                    <p class="help-block text-center">Alle mit dieser E-Mail regestrierten Verteiler werden gelöscht.
+                    </p>
+                </div>
+            </div>
+
+
+            <input class="btn btn-danger btn-lg btn-block mybtn" type="submit" value="Löschen">
+        </dl>
+    </form>
+
+
+
+</div>

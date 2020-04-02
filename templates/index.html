@@ -1,0 +1,70 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Fk03 Mailer
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('.static', filename='mystyle.css')}}">
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="page-header">
+    <h1 class="header-text">Fk03 Mailer <small class="beta">BETA</small></h1>
+</div>
+
+
+
+<body class="background">
+
+    {% if mode == "register" %}
+        {% include 'register.html' %}
+    {% endif %}
+
+    {% if mode == "remove" %}
+        {% include 'remove.html' %}
+    {% endif %}
+
+</body>
+
+
+<div class="container">
+
+
+    <div class="panel panel-default works">
+        <div class="panel-body panel-half">
+            <h4 class="beta">How it works </h4>
+            <p class="help-block text-left">
+                Durch ein Registrieren deiner E-Mail wird diese, mit dem zugehörigen Studiengang, zur Verteilerdatenbank
+                hinzugefügt.
+                Jeden Tag wird mehrmals überprüft, ob auf dem studiengangsspezifischem schwarzen Brett neue Nachrichten
+                veröffentlicht wurden. Wenn ja, erhältst du eine E-Mail.
+            </p>
+            <hr>
+            
+            <p class="help-block text-left">
+                Bereits registriert: {{ counter }} <br>
+                Solltest du dich abmelden wollen kannst du dies <a href="/remove">hier</a>.
+            </p>
+
+            <hr>
+
+            <div class="panel-half">
+                <h4 class="beta">Hilf mit! </h4>
+                <p class="help-block text-left">
+                    Du möchtest helfen den Fk03 Mailer zu verbessern? <a href="https://github.com/MajorMorgen/fk03_mailer">Hier gehts zur Github repo.</a>
+                    
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    {% endblock %}
