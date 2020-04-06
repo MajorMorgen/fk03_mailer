@@ -14,7 +14,7 @@ import logging
 
 MY_ADDRESS = 'schwarzesbrett.info@gmail.com'
 PASSWORD = mail_pw
-SLEEPTIME_HR = 0.5
+SLEEPTIME_HR = 2
 
 def current_path():
         dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
